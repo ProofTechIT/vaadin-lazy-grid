@@ -1,0 +1,449 @@
+/**
+ * These are the variables used throughout the application. This is where 
+ * overwrites that are not specific to components should be maintained.
+ */
+/* common */
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+
+/* end jqeury autocomplete */
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+/* ---------- */
+.lazy-grid {
+  background: #ccc;
+  /*width: auto;
+  height: 2000px;*/
+  /*  */
+  overflow: auto;
+  position: relative;
+}
+
+.lazy-grid .spinner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1px;
+  height: 7px;
+  z-index: 100000;
+  background: #1E5799;
+}
+.lazy-grid .lazyTable-wrapper {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.lazy-grid .lazyTable-wrapper .lazy-grid-table {
+  position: relative;
+}
+.cell {
+  box-sizing: border-box;
+  position: absolute;
+  overflow: visible;
+  display: table;
+  table-layout: fixed;
+}
+
+.cell-inner, 
+.cell-inner input, 
+.cell-inner textarea{
+	border-bottom: 1px solid #ccc;
+	border-right: 1px solid #ccc;
+	box-sizing: border-box;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	display: table-cell;
+    vertical-align: middle;
+    text-align: right;
+	border-bottom: 1px solid #ccc;
+    border-right: 1px solid #ccc; 
+	white-space: nowrap;
+	padding: 0 10px;
+	max-height: 100%;
+}
+
+.r0{
+	border-top: 1px solid #ccc;
+}
+
+.c0{
+	border-left: 1px solid #ccc;
+}
+
+.lazy-grid .lazyTable-wrapper .lazy-grid-table  .cell-inner.cell-under-edit{
+	padding: 0;
+}
+
+
+.lazy-grid .lazyTable-wrapper .lazy-grid-table .cell .number-cell,
+.lazy-grid .lazyTable-wrapper .lazy-grid-table .cell .date-cell,
+.lazy-grid .lazyTable-wrapper .lazy-grid-table .cell .list-cell {
+  border: 0 none;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+}
+
+.lazy-grid .lazyTable-wrapper .lazy-grid-table .cell .text-cell{
+	border: 0 none;
+	padding: 0;
+	margin: 0px;
+	min-height: 100%;
+	min-width: 100%;
+	width: 100%;
+	height: 100%;
+	box-shadow: #777 0px 0px 1px 1px;
+	filter: 
+		progid:DXImageTransform.Microsoft.Shadow(Color=#777777, Strength=2, Direction=0), progid:DXImageTransform.Microsoft.Shadow(Color=#777777, Strength=2, Direction=90), progid:DXImageTransform.Microsoft.Shadow(Color=#777777, Strength=2, Direction=180), progid:DXImageTransform.Microsoft.Shadow(Color=#777777, Strength=2, Direction=270);
+	position: relative;
+	/* for IE8 only */
+	top: -2px\0/;
+	left: -2px\0/;
+}
+
+
+.lazy-grid .lazyTable-wrapper .lazy-grid-table .cell .cell-selected-start{}
+
+.lazy-grid .lazyTable-wrapper .lazy-grid-table .cell-selected{
+	background: #DDEAF5;
+	z-index: 5;
+}
+
+.lazy-grid .lazyTable-wrapper .lazy-grid-table .cell-selected-dynamic{
+	background: #DDEAF5;
+}
+
+/*.cell-selected .cell-inner {*/
+.cell-selected {
+	opacity: 0.6;
+	filter: alpha(opacity=60);
+} 
+
+/*.cell-selected-dynamic .cell-inner {*/
+.cell-selected-dynamic {
+	opacity: 0.6;
+	filter: alpha(opacity=60);
+} 
+
+.cell-selected .cell-inner ,
+.cell-selected-dynamic .cell-inner{
+	background: #E2F7FF;
+}
+
+.passive-union-part .cell-inner{
+	background: transparent !important;
+	border: 0 none !important;
+	text-indent: -999999px;
+}
+.lazy-grid .lazyTable-wrapper .lazy-grid-table .cell.cell-selected-dynamic-layer{
+	z-index: 3;
+}
+
+/*.lazy-grid .lazyTable-wrapper .lazy-grid-table .cell-selected-top{
+	border-top: 2px solid #2989d8 !important;
+}
+
+.lazy-grid .lazyTable-wrapper .lazy-grid-table .cell-selected-top.cell-selected{
+	margin-top: -2px;
+}
+
+.lazy-grid .lazyTable-wrapper .lazy-grid-table .cell-selected-bottom{
+	border-bottom: 2px solid #2989d8 !important;
+}
+
+.lazy-grid .lazyTable-wrapper .lazy-grid-table .cell-selected-left{
+	border-left: 2px solid #2989d8 !important;
+}
+
+.lazy-grid .lazyTable-wrapper .lazy-grid-table .cell-selected-left.cell-selected{
+	margin-left: -2px;
+}
+
+.lazy-grid .lazyTable-wrapper .lazy-grid-table .cell-selected-right{
+	border-right: 2px solid #2989d8 !important;
+}*/
+
+.lazy-table-fixed-column-container{
+	z-index: 6;
+}
+
+.lazy-table-fixed-row-container{
+	z-index: 7;
+}
+
+.lazy-table-fixed-column-container{
+	border-right: 1px solid #8FBA8F;
+}
+
+.lazy-table-fixed-row-container{
+	border-bottom: 1px solid #8FBA8F;
+}
+
+.lazy-table-fixed-column-wrapper,
+.lazy-table-fixed-row-wrapper{
+	overflow: hidden;
+}
+
+.cell-under-edit textarea{
+	display: block;
+}
+
+.lazy-table-fixed-column-wrapper{
+	z-index: 10;
+}
+
+.lazy-table-corner-block{
+	background: rgb(176, 227, 176);
+	border: 1px solid #8FBA8F;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 8;
+}
+
+.cell-inner{
+	background: #ccc;
+}
+	
+.cell-filled{
+	background: #fff;
+}
+
+.cell-disabled{
+	background: #fff;
+	box-sizing: border-box;
+}
+
+.cell-disabled-top{
+	border-top: 1px solid #ccc;
+}
+
+.cell-disabled-bottom{
+	border-bottom: 1px solid #ccc;
+}
+
+.cell-disabled-left{
+	border-left: 1px solid #ccc;
+}
+
+.cell-disabled-right{
+	border-right: 1px solid #ccc;
+}
+
+.cell-union{
+	z-index: 4;
+}
+
+.lazy-grid .lazyTable-wrapper .lazy-grid-table .lazy-table-select{
+	border: 2px solid #2989d8;
+	box-sizing: border-box;
+	position: absolute;
+	pointer-events: none;
+	z-index: 10;
+}
+
+.lazy-grid .lazyTable-wrapper .lazy-grid-table .lazy-table-select .corner-background{
+	background: #fff;
+	width: 10px;
+	height: 10px;
+	position: absolute;
+	bottom: -6px;
+	right: -6px;
+}
+
+.lazy-grid .lazyTable-wrapper .lazy-grid-table .lazy-table-select .corner{
+	background: #40b527;
+	width: 6px;
+	height: 6px;
+	margin: 2px;
+}
+
+.lazyTable-tooltip {
+	background: #2989d8;
+	color: #fff;
+	display: block;
+	position: absolute;
+	padding: 5px 7px;
+	z-index: 100;
+}
+
+.vocabulary-table-inner{
+	overflow: auto;
+	height: 100%;
+	width: 100%;
+}
+
+.lazy-grid .vocabulary-table {
+	border-collapse: collapse;
+	width: 100%;
+}
+
+.lazy-grid .vocabulary-table thead, tbody {
+	/*display: block;*/
+}
+
+.lazy-grid .vocabulary-table tbody {
+	overflow-y: auto; /* Trigger vertical scroll    */
+	overflow-x: hidden; /* Hide the horizontal scroll */
+}
+
+.lazy-grid .vocabulary-table td, .lazy-grid .vocabulary-table th {
+	border: 1px solid #eee;
+	padding: .6em 10px;
+	text-align: left;
+}
+
+.lazy-grid .vocabulary-table .ui-selecting {
+	background: #FECA40;
+}
+
+.lazy-grid .vocabulary-table .ui-selected {
+	background: #F39814;
+	color: white;
+}
+
+.list-cell select {
+	display: none;
+}
+
+
+.context-menu {
+	position: absolute;
+	display: none;
+	z-index: 1000;
+}
+
+.cell-colfixed,
+.cell-rowfixed{
+	position: absolute;
+}
+
+.cell-inner .cell-edit{
+	font-size: inherit;
+}

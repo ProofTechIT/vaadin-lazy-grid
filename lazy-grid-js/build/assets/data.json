@@ -1,0 +1,351 @@
+{
+	"rows": [
+		[{
+			"label": "Имя поля",
+			"colspan": 1,
+			"rowspan": 2,
+			"parentIndex": -1
+		}, {
+			"label": "Имя поля",
+			"colspan": 1,
+			"rowspan": 2,
+			"parentIndex": -1
+		}, {
+			"label": "Имя поля",
+			"colspan": 1,
+			"rowspan": 2,
+			"parentIndex": -1
+		}, {
+			"label": "Имя поля",
+			"colspan": 1,
+			"rowspan": 2,
+			"parentIndex": -1
+		}, {
+			"label": "Имя поля",
+			"colspan": 3,
+			"rowspan": 1,
+			"parentIndex": -1,
+			"hasChild": true
+		}],
+		[{
+			"label": "Имя поля",
+			"colspan": 1,
+			"rowspan": 1,
+			"parentIndex": 4
+		}, {
+			"label": "Имя поля",
+			"colspan": 1,
+			"rowspan": 1,
+			"parentIndex": 4
+		}, {
+			"label": "Имя поля",
+			"colspan": 1,
+			"rowspan": 1,
+			"parentIndex": 4
+		}]
+	],
+	"columns": [
+		[{
+			"label": "Имя поля",
+			"rowspan": 1,
+			"colspan": 2,
+			"parentIndex": -1
+		}, {
+			"label": "Имя поля",
+			"rowspan": 1,
+			"colspan": 2,
+			"parentIndex": -1
+		}, {
+			"label": "Имя поля",
+			"rowspan": 1,
+			"colspan": 1,
+			"parentIndex": -1,
+			"hasChild": true
+		}, {
+			"label": "Имя поля",
+			"rowspan": 2,
+			"colspan": 1,
+			"parentIndex": -1,
+			"hasChild": true
+		}],
+		[{
+			"label": "Имя поля",
+			"rowspan": 1,
+			"colspan": 1,
+			"parentIndex": 2
+		}, {
+			"label": "Имя поля",
+			"rowspan": 1,
+			"colspan": 1,
+			"parentIndex": 3
+		}, {
+			"label": "Имя поля",
+			"rowspan": 1,
+			"colspan": 1,
+			"parentIndex": 3
+		}]
+	],
+	"values": [
+		[{
+			"value": "",
+			"field": "integer",
+			"typeAttributes": {
+				"maxLength": 59,
+				"minLength": 1
+			}
+		}, {
+			"value": "",
+			"field": "text",
+			"typeAttributes": {
+				"maxLength": 59,
+				"minLength": 2,
+				"mask": {}
+			}
+		}, {
+			"value": "",
+			"field": "floatNumber",
+			"typeAttributes": {
+				"decimals": 4,
+				"maxLength": 59,
+				"minLength": 1
+			}
+		}, {
+			"value": "",
+			"field": "money",
+			"typeAttributes": {
+				"currency": "$",
+				"decimals": 2,
+				"maxLength": 20,
+				"minLength": 1
+			}
+		}, {
+			"value": "",
+			"field": "bool",
+			"typeAttributes": {
+				"valFalse": "Новости",
+				"valTrue": "Правда"
+			}
+		}, {
+			"value": "",
+			"field": "date",
+			"typeAttributes": {
+				"format": "dd.MM.yyyy"
+			}
+		}, {
+			"value": "",
+			"field": "variation",
+			"typeAttributes": {
+				"variations": ["Вариант 1", "Вариант 2", "Вариант 3", "Вариант 4"]
+			}
+		}],
+		[{
+			"value": "",
+			"field": "integer",
+			"typeAttributes": {
+				"maxLength": 59,
+				"minLength": 1
+			}
+		}, {
+			"value": "",
+			"field": "text",
+			"typeAttributes": {
+				"maxLength": 59,
+				"minLength": 2,
+				"mask": {}
+			}
+		}, {
+			"value": "",
+			"field": "floatNumber",
+			"typeAttributes": {
+				"decimals": 4,
+				"maxLength": 59,
+				"minLength": 1
+			}
+		}, {
+			"value": "",
+			"field": "money",
+			"typeAttributes": {
+				"currency": "$",
+				"decimals": 2,
+				"maxLength": 20,
+				"minLength": 1
+			}
+		}, {
+			"value": "",
+			"field": "bool",
+			"typeAttributes": {
+				"valFalse": "Новости",
+				"valTrue": "Правда"
+			}
+		}, {
+			"value": "",
+			"field": "date",
+			"typeAttributes": {
+				"format": "dd.MM.yyyy"
+			}
+		}, {
+			"value": "",
+			"field": "variation",
+			"typeAttributes": {
+				"variations": ["Вариант 1", "Вариант 2", "Вариант 3", "Вариант 4"]
+			}
+		}],
+		[{
+			"value": "",
+			"field": "integer",
+			"typeAttributes": {
+				"maxLength": 59,
+				"minLength": 1
+			}
+		}, {
+			"value": "",
+			"field": "text",
+			"typeAttributes": {
+				"maxLength": 59,
+				"minLength": 2,
+				"mask": {}
+			}
+		}, {
+			"value": "",
+			"field": "floatNumber",
+			"typeAttributes": {
+				"decimals": 4,
+				"maxLength": 59,
+				"minLength": 1
+			}
+		}, {
+			"value": "",
+			"field": "money",
+			"typeAttributes": {
+				"currency": "$",
+				"decimals": 2,
+				"maxLength": 20,
+				"minLength": 1
+			}
+		}, {
+			"value": "",
+			"field": "bool",
+			"typeAttributes": {
+				"valFalse": "Новости",
+				"valTrue": "Правда"
+			}
+		}, {
+			"value": "",
+			"field": "date",
+			"typeAttributes": {
+				"format": "dd.MM.yyyy"
+			}
+		}, {
+			"value": "",
+			"field": "variation",
+			"typeAttributes": {
+				"variations": ["Вариант 1", "Вариант 2", "Вариант 3", "Вариант 4"]
+			}
+		}],
+		[{
+			"value": "",
+			"field": "integer",
+			"typeAttributes": {
+				"maxLength": 59,
+				"minLength": 1
+			}
+		}, {
+			"value": "",
+			"field": "text",
+			"typeAttributes": {
+				"maxLength": 59,
+				"minLength": 2,
+				"mask": {}
+			}
+		}, {
+			"value": "",
+			"field": "floatNumber",
+			"typeAttributes": {
+				"decimals": 4,
+				"maxLength": 59,
+				"minLength": 1
+			}
+		}, {
+			"value": "",
+			"field": "money",
+			"typeAttributes": {
+				"currency": "$",
+				"decimals": 2,
+				"maxLength": 20,
+				"minLength": 1
+			}
+		}, {
+			"value": "",
+			"field": "bool",
+			"typeAttributes": {
+				"valFalse": "Новости",
+				"valTrue": "Правда"
+			}
+		}, {
+			"value": "",
+			"field": "date",
+			"typeAttributes": {
+				"format": "dd.MM.yyyy"
+			}
+		}, {
+			"value": "",
+			"field": "variation",
+			"typeAttributes": {
+				"variations": ["Вариант 1", "Вариант 2", "Вариант 3", "Вариант 4"]
+			}
+		}],
+		[{
+			"value": "",
+			"field": "integer",
+			"typeAttributes": {
+				"maxLength": 59,
+				"minLength": 1
+			}
+		}, {
+			"value": "",
+			"field": "text",
+			"typeAttributes": {
+				"maxLength": 59,
+				"minLength": 2,
+				"mask": {}
+			}
+		}, {
+			"value": "",
+			"field": "floatNumber",
+			"typeAttributes": {
+				"decimals": 4,
+				"maxLength": 59,
+				"minLength": 1
+			}
+		}, {
+			"value": "",
+			"field": "money",
+			"typeAttributes": {
+				"currency": "$",
+				"decimals": 2,
+				"maxLength": 20,
+				"minLength": 1
+			}
+		}, {
+			"value": "",
+			"field": "bool",
+			"typeAttributes": {
+				"valFalse": "Новости",
+				"valTrue": "Правда"
+			}
+		}, {
+			"value": "",
+			"field": "date",
+			"typeAttributes": {
+				"format": "dd.MM.yyyy"
+			}
+		}, {
+			"value": "",
+			"field": "variation",
+			"typeAttributes": {
+				"variations": ["Вариант 1", "Вариант 2", "Вариант 3", "Вариант 4"]
+			}
+		}]
+	],
+	"canAddRows": false
+}

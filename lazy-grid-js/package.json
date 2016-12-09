@@ -1,0 +1,39 @@
+{
+  "author": "Wellink Technologies",
+  "name": "lazy-grid",
+  "version": "0.0.1",
+  "homepage": "http://wellink.ru",
+  "bugs": "http://support.wellink.ru",
+  "licenses": {
+    "type": "PRIVATE",
+    "url": ""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@195.208.201.154:reports"
+  },
+  "dependencies": {
+	
+  },
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-bump": "0.0.6",
+    "grunt-coffeelint": "~0.0.10",
+    "grunt-contrib-clean": "^0.4.1",
+    "grunt-contrib-coffee": "^0.7.0",
+    "grunt-contrib-concat": "^0.3.0",
+    "grunt-contrib-copy": "^0.4.1",
+    "grunt-contrib-jshint": "^0.4.3",
+    "grunt-contrib-less": "~0.11.0",
+    "grunt-contrib-uglify": "^0.2.7",
+    "grunt-contrib-watch": "^0.4.4",
+    "grunt-conventional-changelog": "^0.1.2",
+    "grunt-html2js": "^0.1.9",
+    "grunt-karma": "^0.12.0",
+    "grunt-ng-annotate": "^0.8.0",
+    "karma": "^0.13.3",
+    "karma-coffee-preprocessor": "^0.3.0",
+    "karma-firefox-launcher": "^0.1.6",
+    "karma-jasmine": "^0.3.6"
+  }
+}

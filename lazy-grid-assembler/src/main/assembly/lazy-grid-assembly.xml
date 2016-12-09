@@ -1,0 +1,40 @@
+<assembly
+	xmlns="http://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.2"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.2 http://maven.apache.org/xsd/assembly-1.1.2.xsd">
+
+	<id>lazy-grid-package</id>
+
+	<formats>
+		<format>zip</format>
+	</formats>
+
+	<includeBaseDirectory>false</includeBaseDirectory>
+
+	<fileSets>
+		<fileSet>
+			<directory>${basedir}/../lazy-grid-vaadin6-demo</directory>
+			<includes>
+				<include>src/**/*</include>
+				<include>pom.xml</include>
+				<include>run-demo.sh</include>
+			</includes>
+			<outputDirectory>lazy-grid-vaadin6-demo</outputDirectory>
+		</fileSet>
+		<fileSet>
+			<directory>${basedir}/../repo</directory>
+			<includes>
+				<include>**/*</include>
+			</includes>
+			<outputDirectory>repo</outputDirectory>
+		</fileSet>
+		<fileSet>
+			<directory>${basedir}/../lazy-grid-parent</directory>
+			<includes>
+				<include>pom.xml</include>
+			</includes>
+			<outputDirectory>lazy-grid-parent</outputDirectory>
+		</fileSet>
+		
+	</fileSets>
+</assembly>

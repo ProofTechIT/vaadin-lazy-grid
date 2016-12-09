@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!--meta http-equiv="X-UA-Compatible" content="IE=edge"-->
+	<META http-equiv="X-UA-Compatible" content="IE=11; IE=8; chrome=1">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link rel="icon" type="image/png" href="assets/favicon.png">
+    <!-- compiled CSS -->
+    <link rel="stylesheet" type="text/css" href="assets/lazy-grid-0.0.1.css" />
+    <!-- compiled JavaScript -->
+    <script type="text/javascript" src="vendor/jquery/dist/jquery.js"></script>
+    <script type="text/javascript" src="vendor/jquery-json-master/dist/jquery.json.min.js"></script>
+    <script type="text/javascript" src="vendor/datetimepicker/dist/jquery.datetimepicker.full.js"></script>
+    <script type="text/javascript" src="vendor/jquery-ui-1.11.4.custom/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="vendor/jquery.inputmask/dist/jquery.inputmask.bundle.js"></script>
+    <!--script type="text/javascript" src="vendor/dateFormat/dateFormat.js"></script>
+    <script type="text/javascript" src="vendor/dateParser/dateParser.js"></script-->
+    <script type="text/javascript" src="src/app/utils.js"></script>
+    <script type="text/javascript" src="src/app/app.js"></script>
+    <script type="text/javascript" src="src/app/fixed-cells.js"></script>
+	<script>
+		//////// For testing
+		var numberOfRow = 1000;
+		var numberOfColumn = 1000;
+		
+		function getMeta(){
+			var meta = {};
+			meta.colCount = numberOfColumn;
+			meta.rowCount = numberOfRow;
+			meta.rowList = [];
+			meta.columnList = [];
+			meta.cellSpanList = [];
+			meta.defaultColumn = {
+				index: 0,
+				colspan: 1,
+				width: 60,
+				fixed: false,
+				styleNameSet: 'col-class'
+			};
+			meta.defaultRow = {
+				index: 0,
+				colspan: 1,
+				height: 45,
+				fixed: false,
+				styleNameSet: 'row-class'
+			};
+			var i = 0;
+			var j = 0;
+			
+			
+			meta.rowList.push({
+				index: 10,
+				rowspan: 1,
+				height: 25,
+				fixed: true,
+				styleNameSet: 'row-class'
+			});
+			meta.rowList.push({
+				index: 12,
+				rowspan: 1,
+				height: 40,
+				fixed: true,
+				styleNameSet: 'row-class'
+			});
+			meta.rowList.push({
+				index: 20,
+				rowspan: 1,
+				height: 25,
+				fixed: true,
+				styleNameSet: 'row-class'
+			});
+			
+			meta.columnList.push({
+				index: 0,
+				colspan: 1,
+				width: 100,
+				fixed: true,
+				styleNameSet: 'col-class'
+			});
+			meta.columnList.push({
+				index: 12,
+				colspan: 1,
+				width: 40,
+				fixed: true,
+				styleNameSet: 'col-class'
+			});
+			meta.columnList.push({
+				index: 20,
+				colspan: 1,
+				width: 40,
+				fixed: true,
+				styleNameSet: 'col-class'
+			});
+			meta.cellSpanList.push(
+			{
+				top: 10,
+				bottom: 10,
+				left: 0,
+				right: 1
+			},
+			{
+				top: 10,
+				bottom: 10,
+				left: 2,
+				right: 3
+			}
+			);
+			
+			return meta;
+		}
+		
+		function getData(border){
+			var data = [];
+			var i = 0;
+			var j = 0;
+			for( indexRange in border ){
+				for( i = border[indexRange].top; i <= border[indexRange].bottom; i++ ){
+					for( j = border[indexRange].left; j <= border[indexRange].right; j++ ){
+						if( i==0 && j ==1 ){
+							data.push({
+								rowIndex: i,
+								colIndex: j,
+								contentType: {
+									typeName: 'LG_CELL_CONTENT_VOCABULARY',
+									editPluginName: 'LG_CELL_CONTENT_VOCABULARY'
+								},
+								editable: true
+							});
+						} else {
+							data.push({
+								rowIndex: i,
+								colIndex: j,
+								//value: (Math.floor(Math.random() * (100000 - 1 + 1)) + 1),//i + ' ' +j,
+								//value: (Math.floor(Math.random() * (1414792800000 - 86400*7+1000 + 1)) + 86400*7+1000),styleNameSet: 'cell-class',
+								value: i+' '+j,
+								contentValue: i+' '+j,
+								/*contentType: {
+									typeName: 'LG_CELL_CONTENT_NUMBER',
+									typeParameters: {
+										inputMask: '#####'
+									} 
+								}, *//*
+								contentType: {
+									typeName: 'LG_CELL_CONTENT_DATE',
+									typeParameters:{
+										format: 'yyyy.MM.dd HH:mm:ss'
+									}
+								},
+								/*contentType: {
+									typeName: 'LG_CELL_CONTENT_LIST'
+								},
+								/*contentType: {
+									typeName: 'LG_CELL_CONTENT_LABEL'
+								},*/
+								contentType: {
+									typeName: 'LG_CELL_CONTENT_TEXT',
+									editPluginName: 'LG_CELL_CONTENT_TEXT'
+								},
+								editable: true
+							});
+						}
+					}
+				}
+			}
+			return data;
+		}
+		////////////// */
+	
+		(function($) {
+			$(document).ready(function() {
+				var meta = getMeta();
+				//meta.columnList[10].fixed = true;
+				var plugin1 = $('#lazy-grid-1').lazyGrid({
+					meta: meta,
+					build: function( lazyGrid, tableCellRangeList ){
+						var data = getData(tableCellRangeList);
+						lazyGrid.fillTable(data);
+					},
+					event: function(tableCellEvent){
+						//var meta = getMeta();
+						//lazyGrid.reloadTable(meta);
+						//console.log(tableCellEvent);
+					}
+				});
+				
+				var plugin2 = $('#lazy-grid-2').lazyGrid({
+					meta: meta,
+					build: function( lazyGrid, tableCellRangeList ){
+						var data = getData(tableCellRangeList);
+						lazyGrid.fillTable(data);
+					},
+					event: function(tableCellEvent){
+						//var meta = getMeta();
+						//lazyGrid.reloadTable(meta);
+						//console.log(tableCellEvent);
+					}
+				});
+				
+				var calcShowCells = function(){
+					tableHeight = $('.another-container').outerHeight();
+					tableWidth = $('.another-container').outerWidth();
+					var scrollTop = $('.another-container').scrollTop();
+					var scrollLeft = $('.another-container').scrollLeft();
+					
+					
+					var isVisiblePlugin1 = true;
+					var offsetTop1 = plugin1.offset().top;
+					var offsetLeft1 = plugin1.offset().left;
+					realTableHeight1 = plugin1.outerHeight();
+					realTableWidth1 = plugin1.outerWidth();
+					
+					if( 
+						offsetTop1 > tableHeight || 
+						-offsetTop1 > realTableHeight1 ||
+						offsetLeft1 > tableWidth || 
+						-offsetLeft1 > realTableWidth1
+					){
+						isVisiblePlugin1 = false;
+					}
+					
+					if(isVisiblePlugin1){
+						if( offsetTop1 >= 0 ){
+							tableHeight = tableHeight - offsetTop1;
+							tableHeight = tableHeight > realTableHeight1 ? realTableHeight1 : tableHeight;
+							offsetTop1 = 0;
+						} else {
+							offsetTop1 = -offsetTop1;
+						}
+						
+						if( offsetLeft1 >= 0 ){
+							tableWidth = tableWidth - offsetLeft1;
+							tableWidth = tableWidth > realTableWidth1 ? realTableWidth1 : tableWidth;
+							offsetLeft1 = 0;
+						} else {
+							offsetLeft1 = -offsetLeft1;
+						}
+						
+						if( typeof(plugin1.lazyGrid.meta) === 'undefined' ){
+							plugin1.lazyGrid.meta = meta;
+						}
+						plugin1.showCells({
+							offsetTop: offsetTop1,
+							offsetLeft: offsetLeft1,
+							tableWidth: tableWidth,
+							tableHeight: tableHeight
+						});
+					} else {
+						plugin1.hideCells()
+					}
+					
+					tableHeight = $('.another-container').outerHeight();
+					tableWidth = $('.another-container').outerWidth();
+					
+					/*var isVisiblePlugin2 = true;
+					var offsetTop2 = plugin2.offset().top;
+					var offsetLeft2 = plugin2.offset().left;
+					realTableHeight2 = plugin2.outerHeight();
+					realTableWidth2 = plugin2.outerWidth();
+					
+					if( 
+						offsetTop2 > tableHeight || 
+						-offsetTop2 > realTableHeight2 ||
+						offsetLeft2 > tableWidth || 
+						-offsetLeft2 > realTableWidth2
+					){
+						isVisiblePlugin2 = false;
+					}
+					
+					if(isVisiblePlugin2){
+						if( offsetTop2 >= 0 ){
+							tableHeight = tableHeight - offsetTop2;
+							tableHeight = tableHeight > realTableHeight2 ? realTableHeight2 : tableHeight;
+							offsetTop2 = 0;
+						} else {
+							offsetTop2 = -offsetTop2;
+						}
+						
+						if( offsetLeft2 >= 0 ){
+							tableWidth = tableWidth - offsetLeft2;
+							tableWidth = tableWidth > realTableWidth2 ? realTableWidth2 : tableWidth;
+							offsetLeft2 = 0;
+						} else {
+							offsetLeft2 = -offsetLeft2;
+						}
+						
+						plugin2.showCells({
+							offsetTop: offsetTop2,
+							offsetLeft: offsetLeft2,
+							tableWidth: tableWidth,
+							tableHeight: tableHeight
+						});
+					} else {
+						plugin2.hideCells()
+					}*/
+				};
+				
+				plugin1.on('fixedCellsEvent', function(event, data){
+					if( !$('#fixed-container').length ){
+						$('.another-container').append('<div id="fixed-container" style="position: absolute; top: 0; left: 0; width: 0; height: 0;"></div>');
+					}
+					data.tableOffsetLeft = 0;
+					data.tableOffsetTop = 0;
+					var additionalRanges = $('#fixed-container').fixedCells(data);
+					plugin1.lazyGrid.addServerCellRange(additionalRanges);
+				});
+				
+				plugin1.on('fillFixedCells', function(event, tableId){
+					$('div[id$="'+tableId+'-colfixed"]').each(function(){
+						plugin1.lazyGrid.drawCell(this);
+					});
+					$('div[id$="'+tableId+'-rowfixed"]').each(function(){
+						plugin1.lazyGrid.drawCell(this);
+					});
+				});
+				
+				calcShowCells();
+				
+				$('.another-container').on('scroll', function(){
+					calcShowCells();
+				});
+				
+			});
+		})(jQuery);
+	</script>
+</head>
+<body>
+	<div class="another-container" style="height: 500px; width: 500px; overflow: auto;">
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<div style="width: 6000px; height: 4000px;">
+			<div id="lazy-grid-1" class="lazy-grid"></div>
+		</div>
+		<!--div style="width: 6000px; height: 4000px;">
+			<div id="lazy-grid-2" class="lazy-grid"></div>
+		</div-->
+	</div>
+</body>
+</html>

@@ -1,0 +1,41 @@
+@import url('../reindeer/styles.css');
+
+.sb-header {
+	background: rgb(0, 112, 60) !important;
+	color: rgb(255, 255, 255);
+}
+
+
+.square-frame-text {
+	display: inline-block;
+	border: 1px solid #000000;
+	width: 11px;
+	height: 11px;
+	padding: 1px;
+	margin: 1px;
+	text-align: center;
+	font-family: Arial, Helvetica, Tahoma, Verdana, sans-serif;
+	font-size: 10px;
+}
+
+/*
+.lazy-grid-container-scroll {
+	zoom:  1.2;
+}
+.lazy-table-fixed-row-container{
+	zoom:  1.2;
+}
+
+.lazy-table-fixed-row-wrapper {
+	zoom:  1.2;
+}
+
+.lazy-grid-fixed-container{
+	zoom:  1.2;
+}
+
+.zoom-test {
+	zoom:  1.2;
+}
+*/
+

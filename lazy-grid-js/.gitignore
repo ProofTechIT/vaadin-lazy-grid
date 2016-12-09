@@ -1,0 +1,9 @@
+/target/
+/node_modules/
+/karma/
+/bower_components/
+changelog.tpl
+LICENSE
+.settings
+.project
+.classpath
